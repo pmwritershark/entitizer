@@ -12,7 +12,7 @@ const footerStyle={
 
 const titleStyle={
     color: "white",
-    fontSize: "30px",
+    fontSize: "20px",
 }
 
 function Footer(){
