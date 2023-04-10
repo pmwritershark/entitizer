@@ -47,7 +47,7 @@ export function processText(event){
         
     }
   
-    var resultString=JSON.stringify(resultObj,null,2).replace(/{/g,'');
+    var resultString=JSON.stringify(resultObj,null,2).replace(/{/}/g,'');
     resultString=resultString.replace(/"/g,'');
     
     document.getElementById("percentage").value=resultString.replace(/,/g,'\n');
