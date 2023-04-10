@@ -14,22 +14,22 @@ function Table(){
     return(
         <div style={tableStyle}>
             <div>
-                <span>
+                <span style={{margin:"20px"}}>
                   <DisplayBox id="source-content" placeholder="Enter Content Here..."></DisplayBox>
                 </span>
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-                <span>
+                
+                <span style={{margin:"20px"}}>
                   <DisplayBox id="entity-list" placeholder="Enter Entities Here..."></DisplayBox>
                 </span>
 
             </div>
             <Button text="Begin Entitizing"/>
             <div>
-                <span>
+                <span style={{margin:"20px"}}>
                    <DisplayBox id="results" placeholder="View Results Here..."></DisplayBox>
                 </span>
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-                <span>
+               
+                <span style={{margin:"20px"}}>
                    <DisplayBox id="percentage" placeholder="View Entity Percentage Here..."></DisplayBox>
                 </span>
 
