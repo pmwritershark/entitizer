@@ -5,14 +5,14 @@ const textAreaStyle={
     resize:"none",
     border:"none",
     borderRadius:"20px",
-    padding: "40px",
+    padding: "25px",
     backgroundColor:"#ecd9dd",
-    fontSize:"20px"
+    fontSize:"30px"
 }
 
 function DisplayBox(props){
     return(
-        <textarea id={props.id} rows="10" cols="30" placeholder={props.placeholder} style={textAreaStyle}></textarea> 
+        <textarea id={props.id} rows="10" cols="40" placeholder={props.placeholder} style={textAreaStyle}></textarea> 
 
     );
 };
