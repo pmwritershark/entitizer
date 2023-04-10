@@ -7,7 +7,8 @@ const textAreaStyle={
     borderRadius:"20px",
     padding: "25px",
     backgroundColor:"#ecd9dd",
-    fontSize:"30px"
+    fontSize:"30px",
+    marginTop: "10px"
 }
 
 function DisplayBox(props){
