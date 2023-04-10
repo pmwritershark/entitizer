@@ -54,6 +54,8 @@ export function processText(event){
     resultString=resultString.replace(/}/g,'');
     
     document.getElementById("percentage").value=resultString.replace(/,/g,'\n');
+    
+    scrollToBottom();
 }
 
 function convertToList(text) {
@@ -66,3 +68,10 @@ function convertToList(text) {
     const matches = text.match(regex); // find all matches of the regular expression in the text
     return matches ? matches.length : 0; // return the number of matches, or 0 if there are no matches
   }
+
+function scrollToBottom() {
+  window.scrollTo({
+    top: document.documentElement.scrollHeight,
+    behavior: 'smooth'
+  });
+}
