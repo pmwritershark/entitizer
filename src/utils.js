@@ -1,9 +1,14 @@
 export function processText(event){
     
     var contentText=document.getElementById("source-content").value;
+    
+    var displayFlag=true;
 
     if(contentText.length===0){
-        alert("Please enter some text!")
+        alert("Please enter some text!");
+        displayFlag=false;
+    }else{
+        displayFlag=true;
     }
 
     var entityList=[...new Set(convertToList(document.getElementById("entity-list").value))];
@@ -11,7 +16,10 @@ export function processText(event){
     entityList = entityList.map(str => str.replace(/\([^)]*\)/g, '').trim());
 
     if(entityList.length===0 || entityList[0]===""){
-        alert("Please enter some entities!")
+        alert("Please enter some entities!");
+        displayFlag=false;
+    }else{
+        displayFlag=true;
     }
 
     var result=[];
@@ -36,8 +44,6 @@ export function processText(event){
     var modResult=JSON.stringify(result.toString(), null, 2).replace(/"/g,'');
     modResult=modResult.replace(/,/g,'\n');
     
-    document.getElementById("results").value=modResult;
-    
   
     var totalKeywordsUsed=counter;
     var finalPercentage = Math.round(((totalKeywordsUsed/totalKeywords)*100));
@@ -53,9 +59,11 @@ export function processText(event){
     resultString=resultString.replace(/"/g,'');
     resultString=resultString.replace(/}/g,'');
     
+    if(displayFlag){
+    document.getElementById("results").value=modResult;
     document.getElementById("percentage").value=resultString.replace(/,/g,'\n');
-    
     scrollToBottom();
+    }
 }
 
 function convertToList(text) {
