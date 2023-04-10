@@ -32,7 +32,7 @@ export function processText(event){
 
     
     var modResult=JSON.stringify(result.toString(), null, 2).replace(/"/g,'');
-    modResult=modResult.replace(/,/g,'\n);
+    modResult=modResult.replace(/,/g,'\n');
     
     document.getElementById("results").value=modResult;
    
