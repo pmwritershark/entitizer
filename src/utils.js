@@ -8,8 +8,6 @@ export function processText(event){
 
     var entityList=[...new Set(convertToList(document.getElementById("entity-list").value))];
 
-    console.log(entityList);
-
     if(entityList.length===0 || entityList[0]===""){
         alert("Please enter some entities!")
     }
@@ -17,12 +15,14 @@ export function processText(event){
     var result=[];
     var counter=0;
     var total=entityList.length;
+   
     entityList.forEach(entity=>{
 
         var entityNum=countWordOccurrences(contentText, entity);
         
         if(entityNum!==0){
             counter=counter+1;
+           
         }
 
         var entityResult = entity+": "+entityNum;   
@@ -30,7 +30,7 @@ export function processText(event){
         
     });
 
-    document.getElementById("results").value=result;
+    document.getElementById("results").value=JSON.stringify(result, null, 2);
    
     document.getElementById("percentage").value=((counter/total)*100);
 }
