@@ -12,14 +12,14 @@ const footerStyle={
 
 const titleStyle={
     color: "white",
-    fontSize: "20px",
+    fontSize: "25px",
 }
 
 function Footer(){
     return(
         <nav class="navbar navbar-light" style={footerStyle}>
         <div class="container-fluid">
-        <h4 style={titleStyle} class="mx-auto">© 2023 Aristocat Studio</h4>
+        <h4 style={titleStyle} class="mx-auto">© 2023 Writer Shark Content Writing Services</h4>
         </div>    
         
         </nav>
