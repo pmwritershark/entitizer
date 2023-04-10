@@ -41,15 +41,15 @@ export function processText(event){
     var finalPercentage = ((totalKeywordsUsed/totalKeywords)*100);
     
     var resultObj={
-       TotalNumberOfKeywords: totalKeywords,
-       TotalNumberOfKeywordsUsed: totalKeywordsUsed,
-       PercentageOfKeywordsUsed: finalPercentage 
+       Total_Number_Of_Keywords: totalKeywords,
+       Total_Number_Of_Keywords_Used: totalKeywordsUsed,
+       Percentage_Of_Keywords_Used: finalPercentage 
         
     }
   
-    var resultString=JSON.stringify(resultObj,null,2);
+    var resultString=JSON.stringify(resultObj,null,2).replace(/{/g,'');
     
-    document.getElementById("percentage").value=resultString;
+    document.getElementById("percentage").value=resultString.replace(/,/g,'\n');
 }
 
 function convertToList(text) {
