@@ -30,7 +30,7 @@ export function processText(event){
         
     });
 
-    document.getElementById("results").value=JSON.stringify(result, null, 2);
+    document.getElementById("results").value=JSON.stringify(result.toString(), null, 2);
    
     document.getElementById("percentage").value=((counter/total)*100);
 }
