@@ -30,7 +30,11 @@ export function processText(event){
         
     });
 
-    document.getElementById("results").value=JSON.stringify(result.toString(), null, 2);
+    
+    var modResult=JSON.stringify(result.toString(), null, 2).replace(/"/g,'');
+    modResult=modResult.replace(/,/g,'\n);
+    
+    document.getElementById("results").value=modResult;
    
     document.getElementById("percentage").value=((counter/total)*100);
 }
