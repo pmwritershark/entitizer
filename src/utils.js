@@ -7,6 +7,8 @@ export function processText(event){
     }
 
     var entityList=[...new Set(convertToList(document.getElementById("entity-list").value))];
+    
+    entityList = entityList.map(str => str.replace(/\([^)]*\)/g, '').trim());
 
     if(entityList.length===0 || entityList[0]===""){
         alert("Please enter some entities!")
