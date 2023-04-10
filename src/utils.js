@@ -38,7 +38,7 @@ export function processText(event){
     
   
     var totalKeywordsUsed=counter;
-    var finalPercentage = ((totalKeywordsUsed/totalKeywords)*100);
+    var finalPercentage = Math.round(((totalKeywordsUsed/totalKeywords)*100));
     
     var resultObj={
        Total_Number_Of_Keywords: totalKeywords,
@@ -48,6 +48,7 @@ export function processText(event){
     }
   
     var resultString=JSON.stringify(resultObj,null,2).replace(/{/g,'');
+    resultString=resultString.replace(/"/g,'');
     
     document.getElementById("percentage").value=resultString.replace(/,/g,'\n');
 }
