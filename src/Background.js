@@ -19,11 +19,11 @@ function Background() {
     containerRef.current.appendChild(renderer.domElement);
 
     // Create a new Three.js material
-    const material = new THREE.MeshStandardMaterial({ color: 0xffffff, metalness: 0.3, roughness: 0.4 });
+    const material = new THREE.MeshStandardMaterial({ color: 0x000000, metalness: 0.3, roughness: 0.4 });
 
     // Create multiple cubes at random positions
     const cubes = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 25; i++) {
       const geometry = new THREE.BoxGeometry(1, 1, 1);
       const cube = new THREE.Mesh(geometry, material);
       cube.position.set(Math.random() * 10 - 5, Math.random() * 10 - 5, Math.random() * 10 - 5);
