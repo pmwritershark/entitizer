@@ -3,7 +3,8 @@ import React from "react";
 const navbarStyle={
     backgroundColor: "#16453e",
     align:"center",
-    marginBottom:"20px"
+    marginBottom:"20px",
+    position:"fixed"
     
 }
 
