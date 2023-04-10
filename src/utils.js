@@ -14,7 +14,7 @@ export function processText(event){
 
     var result=[];
     var counter=0;
-    var total=entityList.length;
+    var totalKeywords=entityList.length;
    
     entityList.forEach(entity=>{
 
@@ -35,8 +35,21 @@ export function processText(event){
     modResult=modResult.replace(/,/g,'\n');
     
     document.getElementById("results").value=modResult;
-   
-    document.getElementById("percentage").value=((counter/total)*100);
+    
+  
+    var totalKeywordsUsed=counter;
+    var finalPercentage = ((totalKeywordsUsed/totalKeywords)*100);
+    
+    var resultObj={
+       TotalNumberOfKeywords: totalKeywords,
+       TotalNumberOfKeywordsUsed: totalKeywordsUsed,
+       PercentageOfKeywordsUsed: finalPercentage 
+        
+    }
+  
+    var resultString=JSON.stringify(resultObj,null,2);
+    
+    document.getElementById("percentage").value=resultString;
 }
 
 function convertToList(text) {
