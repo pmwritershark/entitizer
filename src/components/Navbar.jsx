@@ -4,7 +4,7 @@ const navbarStyle={
     backgroundColor: "#16453e",
     align:"center",
     marginBottom:"20px",
-    position:"center fixed"
+    position:"center absolute"
     
 }
 
